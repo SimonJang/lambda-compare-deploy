@@ -1,0 +1,51 @@
+{
+	"name": "lambda-compare",
+	"version": "0.0.0",
+	"description": "Comparing AWS Lambdas deployment state in different environments",
+	"main": "dist/index.js",
+	"repository": "SimonJang/lambda-compare-deploy",
+	"scripts": {
+		"lint": "tslint -p . --format stylish",
+		"compile": "del dist && del .nyc_output && tsc",
+		"test": "npm run lint && npm run compile && ./node_modules/.bin/nyc ava dist/test/test.js"
+	},
+	"keywords": [
+		"AWS",
+		"Lambda",
+		"Git",
+		"CI",
+		"CD"
+	],
+	"files": [
+		"index.js"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"type-assert": "^2.1.0"
+	},
+	"devDependencies": {
+		"@types/node": "^10.0.4",
+		"@types/sinon": "^4.3.1",
+		"ava": "^0.25.0",
+		"aws-sdk": "^2.233.1",
+		"del-cli": "^1.1.0",
+		"moment": "^2.22.1",
+		"nyc": "^11.7.1",
+		"sinon": "^5.0.4",
+		"tslint": "^5.9.1",
+		"tslint-xo": "^0.7.0",
+		"typescript": "^2.8.3"
+	},
+	"peerDependencies": {
+		"aws-sdk": "^2.233.1"
+	},
+	"nyc": {
+		"exclude": [
+			"dist/test"
+		]
+	},
+	"ava": {
+		"serial": true
+	}
+}
