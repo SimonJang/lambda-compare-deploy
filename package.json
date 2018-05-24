@@ -1,6 +1,6 @@
 {
 	"name": "lambda-compare",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Comparing AWS Lambdas deployment state in different environments",
 	"main": "dist/index.js",
 	"repository": "SimonJang/lambda-compare-deploy",
